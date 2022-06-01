@@ -5,14 +5,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./page/Home";
 import Users from "./page/Users";
 import Comments from "./page/Comments";
-import { useDispatch } from "react-redux";
-import { fetchUsers } from "./asyncActions/users";
+import Error from "./page/Error";
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -20,8 +16,8 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/users/:id" element={<Users />} />
-          <Route path="/comments" element={<Comments />} />
-          <Route path="*" element={<Home />} />
+          <Route path="/users/:userId/posts/:postId" element={<Comments />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
     </div>

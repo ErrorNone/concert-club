@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
-import { Card, Col, Container, Row, Table } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../asyncActions/users";
-import Posts from "../components/Posts";
-import Publications from "../components/Publications";
-import UserTable from "../components/UserTable";
+import React from "react";
+import {  Container} from "react-bootstrap";
+
+import Posts from "../components/UsersComponents/Posts";
+import Publications from "../components/UsersComponents/Publications";
+import UserTable from "../components/UsersComponents/UserTable";
+
 
 const Users = () => {
 
-
   return (
-    <Container>
+    <Container className="mt-5">
      <UserTable/>
      <Posts/>
      <Publications/>

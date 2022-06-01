@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../asyncActions/users";
-import HomeFooter from "../components/HomeFooter";
-import Slider from "../components/Slider";
-import UsersBoughtTickets from "../components/UsersBoughtTickets";
+import HomeFooter from "../components/HomeComponents/HomeFooter";
+import Slider from "../components/HomeComponents/Slider";
+import UsersBoughtTickets from "../components/HomeComponents/UsersBoughtTickets";
+
+
 
 const Home = () => {
 
