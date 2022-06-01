@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HomeFooter from "../components/HomeComponents/HomeFooter";
 import Slider from "../components/HomeComponents/Slider";
 import UsersBoughtTickets from "../components/HomeComponents/UsersBoughtTickets";
 
-
-
 const Home = () => {
-
-
   return (
     <div className="mb-5">
       <Slider />

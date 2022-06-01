@@ -8,7 +8,7 @@ const rootReduser = combineReducers({
   users: UsersReducer,
   posts: PostsReducer,
   comments: CommentsReducer,
-  strongText: strongTextReduser
+  strongText: strongTextReduser,
 });
 
 export const store = createStore(

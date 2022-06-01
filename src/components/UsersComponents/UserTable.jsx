@@ -4,32 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { loadUsers } from "../../store/actions/users";
 
-const UserTable = () => {
+const UserTable = ({user}) => {
   
-  const navigate = useNavigate();
-
   const strongText = useSelector((state) => state.strongText.strongText);
 
-  const param = useParams();
-  const userId = parseInt(param.id);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadUsers());
-  }, [dispatch]);
-
-  const users = useSelector((state) => state.users.allUsers);
-
-  const user = useSelector((state) =>
-    state.users.allUsers.find((u) => u.id === userId)
-  );
-
-  if (!user) {
-    navigate("*");
-  }
-
-
-  
   return (
     <div className="pt-4">
       {!strongText ? (

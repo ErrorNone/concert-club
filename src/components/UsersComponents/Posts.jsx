@@ -7,13 +7,12 @@ import "../ComponentsStyle.scss";
 import Post from "../Post";
 
 const Posts = () => {
-  const [showAllPosts, setShowAllPosts] = useState(false);
-  const [textButton, setTextButton] = useState('Показать все посты')
-  const strongText = useSelector((state) => state.strongText.strongText);
   const posts = useSelector((state) => state.posts.allPosts);
+  const strongText = useSelector((state) => state.strongText.strongText);
+  const [showAllPosts, setShowAllPosts] = useState(false);
+  const [textButton, setTextButton] = useState("Показать все посты");
   const param = useParams();
   const userId = parseInt(param.id);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,9 +21,11 @@ const Posts = () => {
 
   let previewPosts = posts.slice(0, 3);
   const togglePosts = () => {
-    showAllPosts === false ? setShowAllPosts(true) : setShowAllPosts(false) 
-    showAllPosts === false ? setTextButton('Оставить три поста') : setTextButton('Показать все посты') 
-  }
+    showAllPosts === false ? setShowAllPosts(true) : setShowAllPosts(false);
+    showAllPosts === false
+      ? setTextButton("Оставить три поста")
+      : setTextButton("Показать все посты");
+  };
 
   return (
     <div>
@@ -37,19 +38,19 @@ const Posts = () => {
             <Col lg={6}>
               {!showAllPosts
                 ? previewPosts.map((post) => {
-                    return <Post post={post} key={post.id} userId={userId}/>;
+                    return <Post post={post} key={post.id} userId={userId} />;
                   })
                 : posts.map((post) => {
-                    return <Post post={post} key={post.id} userId={userId}/>;
+                    return <Post post={post} key={post.id} userId={userId} />;
                   })}
             </Col>
           </Row>
           <Row>
             <Col className="mb-3">
-              <Button 
-              className="rounded-0" 
-              variant="dark"
-              onClick={() => togglePosts()}
+              <Button
+                className="rounded-0"
+                variant="dark"
+                onClick={() => togglePosts()}
               >
                 {textButton}
               </Button>
@@ -66,16 +67,19 @@ const Posts = () => {
             <Col lg={6}>
               {!showAllPosts
                 ? previewPosts.map((post) => {
-                    return <Post post={post} key={post.id} userId={userId}/>;
+                    return <Post post={post} key={post.id} userId={userId} />;
                   })
                 : posts.map((post) => {
-                    return <Post post={post} key={post.id} userId={userId}/>;
+                    return <Post post={post} key={post.id} userId={userId} />;
                   })}
             </Col>
           </Row>
           <Row>
             <Col className="mb-3">
-              <Button className="rounded-0 fw-bold" variant="dark" onClick={() => togglePosts()}
+              <Button
+                className="rounded-0 fw-bold"
+                variant="dark"
+                onClick={() => togglePosts()}
               >
                 {textButton}
               </Button>

@@ -11,8 +11,8 @@ import {
 
 const NaviBar = () => {
   const strongText = useSelector((state) => state.strongText.strongText);
-
   const dispatch = useDispatch();
+
   const doStrongText = () => {
     strongText === false
       ? dispatch(strongTextAction())
@@ -29,7 +29,7 @@ const NaviBar = () => {
           variant="dark"
           className="fixed-top"
         >
-          <Container >
+          <Container>
             <NavbarBrand>
               <Link
                 style={{ color: "white", textDecoration: "none" }}

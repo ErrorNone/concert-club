@@ -1,7 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 const Comment = ({ comment }) => {
   const strongText = useSelector((state) => state.strongText.strongText);
