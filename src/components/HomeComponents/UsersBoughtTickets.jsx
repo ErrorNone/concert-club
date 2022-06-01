@@ -24,6 +24,7 @@ const UsersBoughtTickets = () => {
     </Tooltip>
   );
 
+
   return (
     <div>
       {!strongText ? (

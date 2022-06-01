@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import HomeFooter from "../components/HomeComponents/HomeFooter";
 import Slider from "../components/HomeComponents/Slider";
 import UsersBoughtTickets from "../components/HomeComponents/UsersBoughtTickets";
+import { loadUsers } from "../store/actions/users";
 
 const Home = () => {
+ 
   return (
     <div className="mb-5">
       <Slider />
-      <UsersBoughtTickets />
+      <UsersBoughtTickets/>
       <HomeFooter />
     </div>
   );

@@ -24,7 +24,7 @@ const Comments = () => {
   useEffect(() => {
     dispatch(loadComments(postId));
   }, [dispatch, postId]);
-  
+
   const post = useSelector((state) =>
     state.posts.allPosts.find((p) => p.id === postId)
   );
@@ -55,7 +55,7 @@ const Comments = () => {
     setComment("");
     setShow(false);
   };
-  console.log();
+  
 
   return (
     <div className="mt-5">

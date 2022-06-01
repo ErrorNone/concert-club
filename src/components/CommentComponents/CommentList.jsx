@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { loadComments } from "../../store/actions/comments";
+import Loader from "../Loader";
 import Comment from "./Comment";
 
 export const CommentList = ({comments}) => {
@@ -16,9 +17,6 @@ export const CommentList = ({comments}) => {
 
   // const comments = useSelector((state) => state.comments.allComments);
 
-  // if (comments.length === 0) {
-  //   return <Loader />;
-  // }
 
   return (
     <div >
