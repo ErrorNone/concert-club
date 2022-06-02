@@ -14,7 +14,6 @@ const Users = () => {
   useEffect(() => {
     dispatch(loadUsers());
   }, [dispatch]);
-  const users = useSelector((state) => state.users.allUsers);
   const user = useSelector((state) =>
     state.users.allUsers.find((u) => u.id === userId)
   );

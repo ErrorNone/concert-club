@@ -13,9 +13,9 @@ function App() {
       <BrowserRouter>
         <NaviBar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/users/:id" element={<Users />} />
-          <Route path="/users/:userId/posts/:postId" element={<Comments />} />
+          <Route path="/concert-club" element={<Home />} />
+          <Route path="/concert-club/users/:id" element={<Users />} />
+          <Route path="/concert-club/users/:userId/posts/:postId" element={<Comments />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>

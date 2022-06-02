@@ -12,7 +12,7 @@ const UserCard = ({ user }) => {
           <Card.Body>
             <Card.Title>{user.username}</Card.Title>
             <Card.Text>{user.address.city}</Card.Text>
-            <Link to={`/users/${user.id}`}>
+            <Link to={`/concert-club/users/${user.id}`}>
               <Button variant="dark" className="rounded-0">
                 Посмотреть профиль
               </Button>
@@ -24,7 +24,7 @@ const UserCard = ({ user }) => {
           <Card.Body>
             <Card.Title className="fw-bold">{user.username}</Card.Title>
             <Card.Text className="fw-bold">{user.address.city}</Card.Text>
-            <Link to={`/users/${user.id}`}>
+            <Link to={`/concert-club/users/${user.id}`}>
               <Button variant="dark" className="rounded-0 fw-bold">
                 Посмотреть профиль
               </Button>

@@ -35,7 +35,7 @@ const Posts = () => {
             <h3>Посты</h3>
           </Row>
           <Row className="d-flex align-items-center justify-content-center">
-            <Col lg={6}>
+            <Col >
               {!showAllPosts
                 ? previewPosts.map((post) => {
                     return <Post post={post} key={post.id} userId={userId} />;
@@ -63,8 +63,7 @@ const Posts = () => {
             <h3 className="fw-bold">Посты</h3>
           </Row>
           <Row className="d-flex align-items-center justify-content-center">
-            {" "}
-            <Col lg={6}>
+            <Col >
               {!showAllPosts
                 ? previewPosts.map((post) => {
                     return <Post post={post} key={post.id} userId={userId} />;

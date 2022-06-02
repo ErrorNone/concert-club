@@ -15,7 +15,7 @@ const Post = ({ post, userId, ...props }) => {
         <Card className="mb-3 rounded-0 border-dark">
           <Card.Body>
             <Link
-              to={`/users/${userId}/posts/${post.id}`}
+              to={`/concert-club/users/${userId}/posts/${post.id}`}
               className="text-hover"
               {...props}
             >
@@ -30,7 +30,7 @@ const Post = ({ post, userId, ...props }) => {
         <Card className="mb-3 rounded-0 border-dark">
           <Card.Body>
             <Link
-              to={`/users/${userId}/posts/${post.id}`}
+              to={`/concert-club/users/${userId}/posts/${post.id}`}
               className="text-hover"
               {...props}
             >
