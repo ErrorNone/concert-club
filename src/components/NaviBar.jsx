@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
@@ -11,8 +11,8 @@ import {
 
 const NaviBar = () => {
   const strongText = useSelector((state) => state.strongText.strongText);
-
   const dispatch = useDispatch();
+
   const doStrongText = () => {
     strongText === false
       ? dispatch(strongTextAction())

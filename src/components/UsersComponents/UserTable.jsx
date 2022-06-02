@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import { loadUsers } from "../../store/actions/users";
 import Loader from "../Loader";
 
 const UserTable = () => {
-  const navigate = useNavigate();
-
-  const strongText = useSelector((state) => state.strongText.strongText);
-
   const param = useParams();
   const userId = parseInt(param.id);
   const dispatch = useDispatch();
@@ -24,9 +20,7 @@ const UserTable = () => {
     state.users.allUsers.find((u) => u.id === userId)
   );
 
-  if (!user) {
-    navigate("*");
-  }
+  const strongText = useSelector((state) => state.strongText.strongText);
 
   if (users.length === 0) {
     return <Loader />;

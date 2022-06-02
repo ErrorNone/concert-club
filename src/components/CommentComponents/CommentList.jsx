@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Loader } from "../Loader";
 import { useParams } from "react-router";
 import { loadComments } from "../../store/actions/comments";
+import Loader from "../Loader";
 import Comment from "./Comment";
 
 export const CommentList = () => {
@@ -16,12 +16,14 @@ export const CommentList = () => {
   }, [dispatch, postId]);
 
   const comments = useSelector((state) => state.comments.allComments);
+  console.log(comments);
 
-  // if (comments.length === 0) {
-  //   return <Loader />;
-  // }
+  if (comments.length === 0) {
+    return <Loader />;
+  }
+
   return (
-    <div >
+    <div>
       {comments.map((comment) => {
         return <Comment comment={comment} key={comment.id} />;
       })}

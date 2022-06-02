@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NaviBar from "./components/NaviBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";

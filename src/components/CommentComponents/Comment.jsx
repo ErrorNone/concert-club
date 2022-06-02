@@ -4,6 +4,9 @@ import { useSelector } from "react-redux";
 
 const Comment = ({ comment }) => {
   const strongText = useSelector((state) => state.strongText.strongText);
+  if (!comment) {
+    return <Loader />;
+  }
   return (
     <div>
       {!strongText ? (
