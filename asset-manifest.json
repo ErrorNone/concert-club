@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/concert-club/static/css/main.428dafee.css",
-    "main.js": "/concert-club/static/js/main.9fd604d6.js",
+    "main.js": "/concert-club/static/js/main.21d2f7b1.js",
     "static/media/Home-background.png": "/concert-club/static/media/Home-background.ede873f08d2bc83bc8a1.png",
     "index.html": "/concert-club/index.html",
     "main.428dafee.css.map": "/concert-club/static/css/main.428dafee.css.map",
-    "main.9fd604d6.js.map": "/concert-club/static/js/main.9fd604d6.js.map"
+    "main.21d2f7b1.js.map": "/concert-club/static/js/main.21d2f7b1.js.map"
   },
   "entrypoints": [
     "static/css/main.428dafee.css",
-    "static/js/main.9fd604d6.js"
+    "static/js/main.21d2f7b1.js"
   ]
 }
