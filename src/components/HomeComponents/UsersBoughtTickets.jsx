@@ -1,21 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
+import {
+  Col,
+  Container,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUsers } from "../../store/actions/users";
 import "../ComponentsStyle.scss";
+import Loader from "../Loader";
 import UserCard from "./UserCard";
 
 const UsersBoughtTickets = () => {
-  const strongText = useSelector((state) => state.strongText.strongText);
-  const users = useSelector((state) => state.users.allUsers);
-  const forUsers = users.filter((user) => user.id < 5);
-  const [showUsers, setShowUsers] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadUsers());
   }, [dispatch]);
 
+  const strongText = useSelector((state) => state.strongText.strongText);
+  const users = useSelector((state) => state.users.allUsers);
+
+  const forUsers = users.filter((user) => user.id < 5);
+  const [showUsers, setShowUsers] = useState(false);
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       {showUsers === false
@@ -24,10 +32,17 @@ const UsersBoughtTickets = () => {
     </Tooltip>
   );
 
+  // if (users.length === 0) {
+  //   return <Loader />;
+  // }
 
   return (
     <div>
-      {!strongText ? (
+      {
+      // users.length 
+      // ?
+
+      !strongText ? (
         <Container className="mt-4 mb-2">
           <Row>
             <Col xs={8} md={4}>
@@ -59,18 +74,16 @@ const UsersBoughtTickets = () => {
                 ? forUsers.map((user) => {
                     return (
                       <Col xs={10} sm={6} lg={4} xl={3} key={user.id}>
-                        <UserCard user={user} key={user.id} />
+                        <UserCard  user={user} key={user.id}/>
                       </Col>
                     );
                   })
                 : null
               : users.length
               ? users.map((user) => {
-                  return (
-                    <Col xs={10} sm={6} lg={4} xl={3} key={user.id}>
-                      <UserCard user={user} key={user.id} />
-                    </Col>
-                  );
+                  return  <Col xs={10} sm={6} lg={4} xl={3} key={user.id}>
+                  <UserCard  user={user} key={user.id}/>
+                </Col>
                 })
               : null}
           </Row>
@@ -106,25 +119,23 @@ const UsersBoughtTickets = () => {
             {!showUsers
               ? forUsers.length
                 ? forUsers.map((user) => {
-                    return (
-                      <Col xs={10} sm={6} lg={4} xl={3} key={user.id}>
-                        <UserCard user={user} key={user.id} />
-                      </Col>
-                    );
+                    return  <Col xs={10} sm={6} lg={4} xl={3} key={user.id}>
+                    <UserCard  user={user} key={user.id}/>
+                  </Col>
                   })
                 : null
               : users.length
               ? users.map((user) => {
-                  return (
-                    <Col xs={10} sm={6} lg={4} xl={3} key={user.id}>
-                      <UserCard user={user} key={user.id} />
-                    </Col>
-                  );
+                  return  <Col xs={10} sm={6} lg={4} xl={3} key={user.id}>
+                  <UserCard user={user} key={user.id} />
+                </Col>
                 })
               : null}
           </Row>
         </Container>
-      )}
+      )
+      // : <Loader/>
+    }
     </div>
   );
 };

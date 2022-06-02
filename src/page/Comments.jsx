@@ -7,31 +7,9 @@ import Comment from "../components/CommentComponents/Comment";
 import { CommentList } from "../components/CommentComponents/CommentList";
 import Post from "../components/Post";
 import { loadPosts } from "../store/actions/posts";
-import { loadComments } from "../store/actions/comments";
 
 const Comments = () => {
   const strongText = useSelector((state) => state.strongText.strongText);
-
-  const param = useParams();
-  const userId = parseInt(param.userId, 10);
-  const postId = parseInt(param.postId, 10);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadPosts(userId));
-  }, [dispatch, userId]);
-
-  useEffect(() => {
-    dispatch(loadComments(postId));
-  }, [dispatch, postId]);
-
-  const post = useSelector((state) =>
-    state.posts.allPosts.find((p) => p.id === postId)
-  );
-
-  const comments = useSelector((state) => state.comments.allComments);
-  console.log(post);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
@@ -55,15 +33,31 @@ const Comments = () => {
     setComment("");
     setShow(false);
   };
-  
+
+  // his bottom
+  const param = useParams();
+
+  const userId = parseInt(param.userId, 10);
+  const postId = parseInt(param.postId, 10);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadPosts(userId));
+  }, [dispatch, userId]);
+
+  const posts = useSelector((state) => state.posts.allPosts);
+
+  const post = useSelector((state) =>
+    state.posts.allPosts.find((p) => p.id === postId)
+  );
 
   return (
     <div className="mt-5">
       {!strongText ? (
-        <Container className="py-4">
-          <Row className="mt-4 mb-2">
+        <Container className="py-5">
+          <Row className="mb-2">
             <Col>
-              <h4>Пост</h4>
+              <h3>Пост</h3>
             </Col>
           </Row>
           <Row className=" mb-2">
@@ -73,12 +67,12 @@ const Comments = () => {
           </Row>
           <Row className="mb-2">
             <Col>
-              <h4>Комментарии</h4>
+              <h3>Комментарии</h3>
             </Col>
           </Row>
           <Row className="mb-2">
             <Col>
-              <CommentList comments={comments} />
+              <CommentList />
             </Col>
           </Row>
           <Row className="mb-2">
@@ -154,10 +148,10 @@ const Comments = () => {
         </Container>
       ) : (
         // strong version
-        <Container className="py-4">
-          <Row className="mt-4 mb-2">
+        <Container className="my-5">
+          <Row className="pt-5 pb-2">
             <Col>
-              <h4 className="fw-bold">Пост</h4>
+              <h3 className="fw-bold">Пост</h3>
             </Col>
           </Row>
           <Row className=" mb-2">
@@ -167,12 +161,12 @@ const Comments = () => {
           </Row>
           <Row className="mb-2">
             <Col>
-              <h4 className="fw-bold">Комментарии</h4>
+              <h3 className="fw-bold">Комментарии</h3>
             </Col>
           </Row>
           <Row className="mb-2">
             <Col>
-              <CommentList comments={comments} />
+              <CommentList />
             </Col>
           </Row>
           <Row className="mb-2">

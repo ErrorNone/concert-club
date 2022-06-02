@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button, Container, Nav, Navbar, NavbarBrand } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
@@ -11,8 +11,8 @@ import {
 
 const NaviBar = () => {
   const strongText = useSelector((state) => state.strongText.strongText);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
   const doStrongText = () => {
     strongText === false
       ? dispatch(strongTextAction())
@@ -31,10 +31,7 @@ const NaviBar = () => {
         >
           <Container>
             <NavbarBrand>
-              <Link
-                style={{ color: "white", textDecoration: "none" }}
-                to="/home"
-              >
+              <Link style={{ color: "white", textDecoration: "none" }} to="/">
                 <h2>Concert CLUB</h2>
               </Link>{" "}
             </NavbarBrand>
@@ -71,7 +68,7 @@ const NaviBar = () => {
             <NavbarBrand>
               <Link
                 style={{ color: "white", textDecoration: "none" }}
-                to="/home"
+                to="/"
               >
                 <h2 className="fw-bold">Concert CLUB</h2>
               </Link>{" "}

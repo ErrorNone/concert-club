@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NaviBar from "./components/NaviBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <NaviBar />
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/users/:id" element={<Users />} />
           <Route path="/users/:userId/posts/:postId" element={<Comments />} />
           <Route path="*" element={<Error />} />

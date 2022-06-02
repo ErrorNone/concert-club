@@ -3,10 +3,34 @@ import { Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { loadUsers } from "../../store/actions/users";
+import Loader from "../Loader";
 
-const UserTable = ({user}) => {
-  
+const UserTable = () => {
+  const navigate = useNavigate();
+
   const strongText = useSelector((state) => state.strongText.strongText);
+
+  const param = useParams();
+  const userId = parseInt(param.id);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadUsers());
+  }, [dispatch]);
+
+  const users = useSelector((state) => state.users.allUsers);
+
+  const user = useSelector((state) =>
+    state.users.allUsers.find((u) => u.id === userId)
+  );
+
+  if (!user) {
+    navigate("*");
+  }
+
+  if (users.length === 0) {
+    return <Loader />;
+  }
 
   return (
     <div className="pt-4">

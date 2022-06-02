@@ -10,10 +10,7 @@ const Post = ({ post, userId }) => {
       {!strongText ? (
         <Card className="mb-3 rounded-0 border-dark">
           <Card.Body>
-            <Link
-              to={`/users/${userId}/posts/${post.id}`}
-              className="text-hover"
-            >
+            <Link to={`/users/${userId}/posts/${post.id}`} className="text-hover">
               <Card.Title>
                 <h4>{post.title}</h4>
               </Card.Title>
@@ -24,10 +21,7 @@ const Post = ({ post, userId }) => {
       ) : (
         <Card className="mb-3 rounded-0 border-dark">
           <Card.Body>
-            <Link
-              to={`/users/${userId}/posts/${post.id}`}
-              className="text-hover"
-            >
+            <Link to={`/users/${userId}/posts/${post.id}`} className="text-hover">
               <Card.Title>
                 <h4 className="fw-bold">{post.title}</h4>
               </Card.Title>

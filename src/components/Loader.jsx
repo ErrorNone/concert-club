@@ -3,9 +3,16 @@ import { Spinner } from "react-bootstrap";
 
 const Loader = () => {
   return (
-    <Spinner animation="border" role="status">
+    <div class="d-flex justify-content-center align-items-center" >
+    <Spinner
+      animation="border"
+      role="status"
+      style={{  marginTop: "250px" }}
+      size="xxl"
+    >
       <span className="visually-hidden">Loading...</span>
     </Spinner>
+    </div>
   );
 };
 
