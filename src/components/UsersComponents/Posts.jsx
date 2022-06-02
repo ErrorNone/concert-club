@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { loadPosts } from "../../store/actions/posts";
 import "../ComponentsStyle.scss";
 import Post from "../Post";

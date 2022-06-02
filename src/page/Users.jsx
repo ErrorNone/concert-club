@@ -20,9 +20,9 @@ const Users = () => {
   );
   return (
     <Container className="mt-5">
-          <UserTable user={user} />
-          <Posts user={user} />
-          <Publications user={user} />
+      <UserTable user={user} />
+      <Posts user={user} />
+      <Publications user={user} />
     </Container>
   );
 };

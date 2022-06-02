@@ -66,10 +66,7 @@ const NaviBar = () => {
         >
           <Container>
             <NavbarBrand>
-              <Link
-                style={{ color: "white", textDecoration: "none" }}
-                to="/"
-              >
+              <Link style={{ color: "white", textDecoration: "none" }} to="/">
                 <h2 className="fw-bold">Concert CLUB</h2>
               </Link>{" "}
             </NavbarBrand>

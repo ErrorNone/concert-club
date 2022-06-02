@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { loadUsers } from "../../store/actions/users";
-import Loader from "../Loader";
+import Loader from "../Loader/Loader";
 
 const UserTable = () => {
   const param = useParams();

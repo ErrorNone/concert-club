@@ -2,9 +2,9 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Loader from "./Loader";
+import Loader from "./Loader/Loader";
 
-const Post = ({ post, userId }) => {
+const Post = ({ post, userId, ...props }) => {
   const strongText = useSelector((state) => state.strongText.strongText);
   if (!post || !userId) {
     return <Loader />;
@@ -17,6 +17,7 @@ const Post = ({ post, userId }) => {
             <Link
               to={`/users/${userId}/posts/${post.id}`}
               className="text-hover"
+              {...props}
             >
               <Card.Title>
                 <h4>{post.title}</h4>
@@ -31,6 +32,7 @@ const Post = ({ post, userId }) => {
             <Link
               to={`/users/${userId}/posts/${post.id}`}
               className="text-hover"
+              {...props}
             >
               <Card.Title>
                 <h4 className="fw-bold">{post.title}</h4>

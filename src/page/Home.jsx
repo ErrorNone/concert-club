@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import HomeFooter from "../components/HomeComponents/HomeFooter";
 import Slider from "../components/HomeComponents/Slider";
 import UsersBoughtTickets from "../components/HomeComponents/UsersBoughtTickets";

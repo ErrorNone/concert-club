@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Carousel, CarouselItem } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import HomeBackground from "../../img/Home-background.png";
-import Loader from "../Loader";
 import "./Slider.scss";
 
 const Slider = () => {
@@ -26,7 +25,7 @@ const Slider = () => {
               />
             )}
             <img
-              style={loaded ? {objectFit: "cover"} : { display: "none"   }}
+              style={loaded ? { objectFit: "cover" } : { display: "none" }}
               src={HomeBackground}
               onLoad={() => setLoaded(true)}
               className=" w-100"
@@ -57,7 +56,7 @@ const Slider = () => {
               />
             )}
             <img
-              style={loaded ? {objectFit: "cover"} : { display: "none"   }}
+              style={loaded ? { objectFit: "cover" } : { display: "none" }}
               src={HomeBackground}
               onLoad={() => setLoaded(true)}
               className=" w-100"
@@ -88,7 +87,7 @@ const Slider = () => {
               />
             )}
             <img
-              style={loaded ? {objectFit: "cover"} : { display: "none"   }}
+              style={loaded ? { objectFit: "cover" } : { display: "none" }}
               src={HomeBackground}
               onLoad={() => setLoaded(true)}
               className=" w-100"
@@ -105,10 +104,9 @@ const Slider = () => {
               </Button>
             </Carousel.Caption>
           </CarouselItem>
-         
         </Carousel>
-        // Strong version
       ) : (
+        // Strong version
         <Carousel>
           <CarouselItem>
             {loaded ? null : (
@@ -124,7 +122,7 @@ const Slider = () => {
               />
             )}
             <img
-              style={loaded ? {objectFit: "cover"} : { display: "none"   }}
+              style={loaded ? { objectFit: "cover" } : { display: "none" }}
               src={HomeBackground}
               onLoad={() => setLoaded(true)}
               className=" w-100"
@@ -155,7 +153,7 @@ const Slider = () => {
               />
             )}
             <img
-              style={loaded ? {objectFit: "cover"} : { display: "none"   }}
+              style={loaded ? { objectFit: "cover" } : { display: "none" }}
               src={HomeBackground}
               onLoad={() => setLoaded(true)}
               className=" w-100"
@@ -186,7 +184,7 @@ const Slider = () => {
               />
             )}
             <img
-              style={loaded ? {objectFit: "cover"} : { display: "none"   }}
+              style={loaded ? { objectFit: "cover" } : { display: "none" }}
               src={HomeBackground}
               onLoad={() => setLoaded(true)}
               className=" w-100"
@@ -203,7 +201,6 @@ const Slider = () => {
               </Button>
             </Carousel.Caption>
           </CarouselItem>
-         
         </Carousel>
       )}
     </div>

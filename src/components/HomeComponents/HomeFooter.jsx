@@ -5,14 +5,13 @@ import {
   Col,
   Container,
   Form,
-  FormControl,
   FormGroup,
   FormLabel,
-  Image,
   Row,
 } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import line from "../../img/line.png";
+import TextareaAutosize from "react-textarea-autosize";
 
 const HomeFooter = () => {
   const strongText = useSelector((state) => state.strongText.strongText);
@@ -61,11 +60,11 @@ const HomeFooter = () => {
                   <FormLabel>
                     <h5>Оставить заявку на проведение концерта</h5>
                   </FormLabel>
-                  <FormControl
-                    as="textarea"
-                    placeholder="Расскажите о вашем предложении "
-                    rows={5}
-                    className="mb-3 rounded-0 border border-dark"
+                  <TextareaAutosize
+                    style={{ resize: "none" }}
+                    className="form-control mb-3 rounded-0 border border-dark"
+                    minRows={5}
+                    placeholder="Расскажите о вашем предложении"
                     value={offer}
                     onChange={(e) => setOffer(e.target.value)}
                   />
@@ -123,11 +122,11 @@ const HomeFooter = () => {
                       Оставить заявку на проведение концерта
                     </h5>
                   </FormLabel>
-                  <FormControl
-                    as="textarea"
-                    placeholder="Расскажите о вашем предложении "
-                    rows={5}
-                    className="mb-3 rounded-0 border border-dark fw-bold"
+                  <TextareaAutosize
+                    style={{ resize: "none" }}
+                    className="form-control mb-3 rounded-0 border border-dark fw-bold"
+                    minRows={5}
+                    placeholder="Расскажите о вашем предложении"
                     value={offer}
                     onChange={(e) => setOffer(e.target.value)}
                   />

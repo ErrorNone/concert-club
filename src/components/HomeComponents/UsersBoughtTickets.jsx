@@ -3,7 +3,7 @@ import { Col, Container, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUsers } from "../../store/actions/users";
 import "../ComponentsStyle.scss";
-import Loader from "../Loader";
+import Loader from "../Loader/Loader";
 import UserCard from "./UserCard";
 
 const UsersBoughtTickets = () => {
